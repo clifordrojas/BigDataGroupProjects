@@ -1,0 +1,9 @@
+#Cliff's guide to make a branch
+#Create branch 
+git checkout -b fnameLInitial
+
+#Ensure that you have approved Jeff's request via your Github email
+#Commit as usual 
+#push use 
+git push --set-upstream origin fnameLInitial
+

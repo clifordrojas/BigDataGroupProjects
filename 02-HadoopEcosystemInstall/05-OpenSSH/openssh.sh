@@ -1,10 +1,19 @@
 #!/bin/bash
 
+echo "Y
+" > yes.txt
+
 sudo apt install openssh-client
+sudo apt install openssh-server < yes.txt
+rm yes.txt
 
-sudo apt install openssh-server
 
-ssh-keygen
-ssh-copy-id localhost
+echo "
 
+
+" > enter.txt
+ssh-keygen  < enter.txt
+#ssh-copy-id localhost 
+cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+rm enter.txt
 

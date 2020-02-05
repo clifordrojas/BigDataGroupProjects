@@ -7,9 +7,9 @@ sudo wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
 sudo chmod 755 /opt/
 
 # unzip
-tar -xf Python-3.6.9.tgz
-rm Python-3.6.9.tgz
+sudo tar -xf Python-3.6.9.tgz
+sudo rm Python-3.6.9.tgz
 
 sudo chmod 755 /opt/
-sudo ln -s /opt/python-3.6.9/bin/ python
+sudo ln -s /usr/bin/python /usr/bin/python
 

@@ -16,7 +16,9 @@ echo
 
 echo ... Installing Scala ...
 echo NOT IMPLEMENTED YET
-#!!!03-Scala/run.sh
+03-Scala/install_scala.sh
+export SCALA_HOME=/usr/share/scala/bin
+export PATH=$SCALA_HOME/bin:$PATH
 echo
 
 echo ... Installing Sbt ...
@@ -77,8 +79,8 @@ export HADOOP_YARN_HOME=\$HADOOP_HOME
 export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
 
 export KAFKA_HOME=/opt/kafka_2.12-2.3.1
+export SCALA_HOME=/usr/share/scala/bin
 
-
-export PATH=$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+export PATH=$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 

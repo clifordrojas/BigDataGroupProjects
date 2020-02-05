@@ -22,7 +22,7 @@ echo
 
 echo ... Installing Sbt ...
 echo NOT IMPLEMENTED YET
-#!!!04-Sbt/run.sh
+04-Sbt/install_sbt.sh
 echo
 
 echo ... Installing OpenSSH ...

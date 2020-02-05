@@ -77,9 +77,14 @@ export HADOOP_HDFS_HOME=\$HADOOP_HOME
 export HADOOP_YARN_HOME=\$HADOOP_HOME
 export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
 
-export KAFKA_HOME=/opt/kafka_2.12-2.3.1
+export KAFKA_HOME=/opt/kafka
 export SCALA_HOME=/usr/share/scala/bin
 
 export PATH=$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 
+echo All Done !!!
+echo
+echo Source .bash_profile and your are ready to go
+echo
+echo

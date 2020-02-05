@@ -21,7 +21,7 @@ echo "Y
 # install Java
 sudo apt update
 sudp apt install openjdk-8-jdk-headless openjre-8-headless < Yes.txt
-sudo apt install openjdk-8-jdk openjdk-8-jre
+sudo apt install openjdk-8-jdk openjdk-8-jre < Yes.txt
 #Add to bash profile
 sudo ln -s /opt/jdk1.8.0_221/bin/java /usr/bin/java
 

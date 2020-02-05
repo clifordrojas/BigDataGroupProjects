@@ -32,7 +32,8 @@ cd $HADOOP_HOME/etc/hadoop
 mv hadoop-env.sh hadoop-env.sh.orig 
 
 # change the ${JAVA_HOME} place holder to the correct location
-cat hadoop-env.sh.orig | sed -e "s/\${JAVA_HOME}/\/opt\/jdk1.8.0_221/" > hadoop-env.sh
+#cat hadoop-env.sh.orig | sed -e "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-openjdk-amd64/" > hadoop-env.sh
+cat hadoop-env.sh.orig | sed -e "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-openjdk-amd64" > hadoop-env.sh
 rm hadoop-env.sh.orig 
 
 # add temp directory and file system environmental variable for hadooop

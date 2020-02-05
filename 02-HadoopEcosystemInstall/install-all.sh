@@ -9,7 +9,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 echo
 
 echo ... Installing Python ...
-02-Python/InstallPy.sh 2&> $LF
+02-Python/InstallPy.sh 2&>> $LF
 export PYTHON_HOME=/opt/Python-3.6.9
 export PATH=$PATH:/opt/Python-3.6.9/bin
 echo
@@ -27,15 +27,15 @@ echo NOT IMPLEMENTED YET
 echo
 
 echo ... Installing OpenSSH ...
-05-OpenSSH/openssh.sh 2&> $LF
+05-OpenSSH/openssh.sh 2&>> $LF
 echo
 
 echo ... Installing Github ...
-06-GitHub/git_install.sh 2&> $LF
+06-GitHub/git_install.sh 2&>> $LF
 echo
 
 echo ... Installing Hadoop ...
-08-Hadoop/hadoop_install.sh 2&> $LF
+08-Hadoop/hadoop_install.sh 2&>> $LF
 export HADOOP_HOME=/opt/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop

@@ -31,7 +31,7 @@ echo ... Installing Github ...
 echo
 
 echo ... Installing Hadoop ...
-08-Hadoop/hadoop_install.sh
+08-Hadoop/hadoop_install.sh 2&> $LF
 export HADOOP_HOME=/opt/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
@@ -39,6 +39,10 @@ echo
 
 echo ... Installing Kafka ...
 #09-Kafka/installKafka.sh
+export KAFKA_HOME=/opt/kafka_2.12-2.3.1
+cd opt
+sudo chown hadoop * -R
+cd ~
 echo
 
 echo ... Installing Airflow ...
@@ -67,6 +71,9 @@ export HADOOP_HDFS_HOME=\$HADOOP_HOME
 export HADOOP_YARN_HOME=\$HADOOP_HOME
 export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
 
-export PATH=$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+export KAFKA_HOME=/opt/kafka_2.12-2.3.1
+
+
+export PATH=$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 

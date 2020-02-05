@@ -1,38 +1,22 @@
 #!/bin/bash
 # run as hadoop user
-
-export LOG=/home/hadoop/install.log
-
-# update the hadoop user environment
-cd /home/hadoop
-
-echo "
-export HADOOP_HOME=/opt/hadoop
-export PATH=\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin:$PATH
-export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop
-export HADOOP_INSTALL=\$HADOOP_HOME
-export HADOOP_MAPRED_HOME=\$HADOOP_HOME
-export HADOOP_COMMON_HOME=\$HADOOP_HOME
-export HADOOP_HDFS_HOME=\$HADOOP_HOME
-export HADOOP_YARN_HOME=\$HADOOP_HOME
-export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
-" >> .bashrc
-
-# where will we install hadoop?
 export HADOOP_HOME=/opt/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
+# update the hadoop user environment
+cd /home/hadoop
+
 # change owner
 cd /
-sudo chmod 777 /opt
+sudo chmod 755 /opt
 cd /opt
 
 # download hadoop core
-wget http://archive.apache.org/dist/hadoop/core/hadoop-2.8.5/hadoop-2.8.5.tar.gz
+sudo wget http://archive.apache.org/dist/hadoop/core/hadoop-2.8.5/hadoop-2.8.5.tar.gz
 
 # untar the file and remove it
-sudo tar xvzf hadoop-2.8.5.tar.gz  > $LOG
+sudo tar xvzf hadoop-2.8.5.tar.gz 
 sudo rm hadoop-2.8.5.tar.gz 
 
 # link hadoop dir to the hadoop-verion
@@ -48,7 +32,7 @@ cd $HADOOP_HOME/etc/hadoop
 mv hadoop-env.sh hadoop-env.sh.orig 
 
 # change the ${JAVA_HOME} place holder to the correct location
-cat hadoop-env.sh.orig | sed -e "s/\${JAVA_HOME}/\/usr\/lib\/jvm\/java-8-openjdk-amd64/" > hadoop-env.sh
+cat hadoop-env.sh.orig | sed -e "s/\${JAVA_HOME}/\/opt\/jdk1.8.0_221/" > hadoop-env.sh
 rm hadoop-env.sh.orig 
 
 # add temp directory and file system environmental variable for hadooop

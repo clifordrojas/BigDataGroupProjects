@@ -1,5 +1,6 @@
 # begin
 LF=~/hadoop_ecosystem_install.log
+sudo echo
 
 echo ... Installing Java ...
 01-Java/installJava.sh 2&> $LF 
@@ -31,6 +32,9 @@ echo
 
 echo ... Installing Hadoop ...
 08-Hadoop/hadoop_install.sh
+export HADOOP_HOME=/opt/hadoop
+export PATH=$HADOOP_HOME/bin:$PATH
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 echo
 
 echo ... Installing Kafka ...
@@ -51,8 +55,18 @@ echo ... Setting up Pyspark ...
 cd ~
 echo "
 export PYTHON_HOME=/opt/Python-3.6.9
-
 export JAVA_HOME=$JAVA_HOME
-export PATH=$JAVA_HOME/bin:$PYTHON_HOME/bin:$PATH
+
+export HADOOP_HOME=/opt/hadoop
+export PATH=\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin:$PATH
+export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop
+export HADOOP_INSTALL=\$HADOOP_HOME
+export HADOOP_MAPRED_HOME=\$HADOOP_HOME
+export HADOOP_COMMON_HOME=\$HADOOP_HOME
+export HADOOP_HDFS_HOME=\$HADOOP_HOME
+export HADOOP_YARN_HOME=\$HADOOP_HOME
+export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
+
+export PATH=$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 

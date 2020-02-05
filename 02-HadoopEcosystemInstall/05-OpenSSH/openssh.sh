@@ -7,7 +7,6 @@ sudo apt install openssh-client
 sudo apt install openssh-server < yes.txt
 rm yes.txt
 
-
 echo "
 
 

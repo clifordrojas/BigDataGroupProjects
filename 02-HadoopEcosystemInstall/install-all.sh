@@ -15,7 +15,7 @@ echo ... Installing Scala ...
 
 #!!!04-Sbt/run.sh
 05-OpenSSH/openssh.sh
-06-Git/git_install.sh
+06-Github/git_install.sh
 
 #!!!07-Netcat/run.sh
 #08-Hadoop/hadoop_install.sh

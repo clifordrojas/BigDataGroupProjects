@@ -8,27 +8,17 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 echo
 
-echo enter to continue ...
-read
-
 echo ... Installing Python ...
 02-Python/InstallPy.sh 2&>> $LF
 export PYTHON_HOME=/opt/Python-3.6.9
 export PATH=$PATH:/opt/Python-3.6.9/bin
 echo
 
-echo enter to continue ...
-read
-
 echo ... Installing Scala ...
-echo NOT IMPLEMENTED YET
-03-Scala/install_scala.sh
+03-Scala/install_scala.sh 2&>> $LF
 export SCALA_HOME=/usr/share/scala/bin
 export PATH=$SCALA_HOME/bin:$PATH
 echo
-
-echo enter to continue ...
-read
 
 echo ... Installing Sbt ...
 echo NOT IMPLEMENTED YET
@@ -52,7 +42,7 @@ echo
 
 echo ... Installing Kafka ...
 09-Kafka/installKafka.sh
-export KAFKA_HOME=/opt/kafka_2.12-2.3.1
+export KAFKA_HOME=/opt/kafka
 cd /opt
 sudo chown hadoop * -R
 cd ~

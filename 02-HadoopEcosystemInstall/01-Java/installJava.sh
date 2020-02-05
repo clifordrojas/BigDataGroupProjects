@@ -15,11 +15,14 @@ cd /opt
 #Move to home dir
 cd ~/
 
+echo "Y
+" > Yes.txt
+
 # install Java
 sudo apt update
-sudp apt install openjdk-8-jdk-headless openjre-8-headless
+sudp apt install openjdk-8-jdk-headless openjre-8-headless < Yes.txt
 sudo apt install openjdk-8-jdk openjdk-8-jre
 #Add to bash profile
 sudo ln -s /opt/jdk1.8.0_221/bin/java /usr/bin/java
 
-
+rm Yes.txt

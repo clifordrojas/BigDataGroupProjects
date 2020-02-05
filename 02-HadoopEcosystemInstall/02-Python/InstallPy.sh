@@ -11,5 +11,5 @@ sudo tar -xf Python-3.6.9.tgz
 sudo rm Python-3.6.9.tgz
 
 sudo chmod 755 /opt/
-sudo ln -s /usr/bin/python /usr/bin/python
+sudo ln -s /usr/bin/python3 /usr/bin/python
 

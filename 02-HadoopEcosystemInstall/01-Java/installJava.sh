@@ -16,6 +16,6 @@ sudo rm jdk-8u221-linux-x64.tar.gz
 cd ~/
 
 #Add to bash profile
-sudo ln -s jdk1.8.0_221 java
+sudo ln -s /opt/jdk1.8.0_221/bin/java /usr/bin/java
 
 

@@ -40,7 +40,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 echo
 
 echo ... Installing Kafka ...
-#09-Kafka/installKafka.sh
+09-Kafka/installKafka.sh
 export KAFKA_HOME=/opt/kafka_2.12-2.3.1
 cd /opt
 sudo chown hadoop * -R

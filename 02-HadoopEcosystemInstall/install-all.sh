@@ -4,9 +4,12 @@ sudo echo
 
 echo ... Installing Java ...
 01-Java/installJava.sh 2&> $LF 
-export JAVA_HOME=/opt/jdk1.8.0_221
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 echo
+
+echo enter to continue ...
+read
 
 echo ... Installing Python ...
 02-Python/InstallPy.sh 2&>> $LF
@@ -14,12 +17,18 @@ export PYTHON_HOME=/opt/Python-3.6.9
 export PATH=$PATH:/opt/Python-3.6.9/bin
 echo
 
+echo enter to continue ...
+read
+
 echo ... Installing Scala ...
 echo NOT IMPLEMENTED YET
 03-Scala/install_scala.sh
 export SCALA_HOME=/usr/share/scala/bin
 export PATH=$SCALA_HOME/bin:$PATH
 echo
+
+echo enter to continue ...
+read
 
 echo ... Installing Sbt ...
 echo NOT IMPLEMENTED YET

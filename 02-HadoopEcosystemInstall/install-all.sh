@@ -2,13 +2,13 @@
 LF=~/hadoop_ecosystem_install.log
 
 echo ... Installing Java ...
-01-Java/installJava.sh > ~/hadoop_ecosystem_install.log
+01-Java/installJava.sh 2&> $LF 
 export JAVA_HOME=/opt/jdk1.8.0_221
 export PATH=$JAVA_HOME/bin:$PATH
 echo
 
 echo ... Installing Python ...
-02-Python/InstallPy.sh
+02-Python/InstallPy.sh 2&> $LF
 export PYTHON_HOME=/opt/Python-3.6.9
 export PATH=$PATH:/opt/Python-3.6.9/bin
 echo
@@ -22,19 +22,15 @@ echo ... Installing Sbt ...
 echo
 
 echo ... Installing OpenSSH ...
-05-OpenSSH/openssh.sh
+05-OpenSSH/openssh.sh 2&> $LF
 echo
 
 echo ... Installing Github ...
-06-GitHub/git_install.sh
-echo
-
-echo ... Installing Netcat ... 
-#!!!07-Netcat/run.sh
+06-GitHub/git_install.sh 2&> $LF
 echo
 
 echo ... Installing Hadoop ...
-#08-Hadoop/hadoop_install.sh
+08-Hadoop/hadoop_install.sh
 echo
 
 echo ... Installing Kafka ...

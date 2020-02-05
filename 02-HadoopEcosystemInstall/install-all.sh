@@ -1,6 +1,6 @@
 # begin
 echo ... Installing Java ...
-01-Java/installJava.sh
+01-Java/installJava.sh > ~/hadoop_ecosystem_install.log
 
 export JAVA_HOME=/opt/jdk1.8.0_221
 export PATH=$JAVA_HOME/bin:$PATH
@@ -14,8 +14,9 @@ echo ... Installing Scala ...
 #!!!03-Scala/run.sh
 
 #!!!04-Sbt/run.sh
-#05-OpenSSH/openssh.sh
-#06-Git/git_install.sh
+05-OpenSSH/openssh.sh
+06-Git/git_install.sh
+
 #!!!07-Netcat/run.sh
 #08-Hadoop/hadoop_install.sh
 #09-Kafka/installKafka.sh

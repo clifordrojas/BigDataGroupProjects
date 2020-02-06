@@ -49,8 +49,8 @@ cd ~
 echo
 
 echo ... Installing Airflow ...
-echo NOT IMPLEMENTED YET
-#!!!10-Airflow/run.sh
+10-Airflow/install_airflow.sh
+export AIRFLOW_HOME=/home/hadoop/airflow
 echo
 
 echo ... Installing Spark ...

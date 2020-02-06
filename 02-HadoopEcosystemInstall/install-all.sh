@@ -1,4 +1,12 @@
-# begin
+#!/bin/bash
+# get user name for filling paths later
+USER_ID=`whoami`
+if [ -z "$USER_ID" ]
+then
+    USER_ID='hadoop'
+fi
+export USER_ID
+
 LF=~/hadoop_ecosystem_install.log
 sudo echo
 
@@ -40,7 +48,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 echo
 
 echo ... Installing Kafka ...
-09-Kafka/installKafka.sh
+09-Kafka/installKafka.sh 2&>> $LF
 export KAFKA_HOME=/opt/kafka
 cd /opt
 sudo chown hadoop * -R
@@ -50,17 +58,12 @@ echo
 echo ... Installing Airflow ...
 10-Airflow/install_airflow.sh
 export AIRFLOW_HOME=/home/`whoami`/airflow
-export PATH=/home/`whoami`/.local/bin:PATH
+export PATH=/home/$USER_ID/.local/bin:PATH
 echo
 
 echo ... Installing Spark ...
-echo NOT IMPLEMENTED YET
-#11-Spark/InstallSpark.sh
+11-Spark/InstallSpark.sh
 echo
-
-#echo ... Setting up Pyspark ...
-#echo NOT IMPLEMENTED YET
-#!!!12-PySpark/run.sh
 
 cd ~
 echo "
@@ -80,7 +83,7 @@ export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
 export KAFKA_HOME=/opt/kafka
 export SCALA_HOME=/usr/share/scala/bin
 
-export PATH=/home/`whoami`/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+export PATH=/home/$USER_ID/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 
 echo All Done !!!

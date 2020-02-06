@@ -1,3 +1,12 @@
 #!/bin/bash
-sudo apt install python-pip
-pip3 install apache-airflow
+cd ~
+echo "Y
+" > Yes.txt
+
+sudo apt install python-pip < Yes.txt
+sudo pip install apache-airflow < Yes.txt
+
+export PATH=$PATH:/home/`/usr/bin/whoami`/.local/bin
+airflow initdb
+
+rm Yes.txt

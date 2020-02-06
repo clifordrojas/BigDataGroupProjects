@@ -1,0 +1,2 @@
+export JAVA_HOME=/opt/jdk1.8.0_221
+export PATH=.:/home/jeff/bin:/home/jeff/.local/bin:/opt/kafka/bin:/opt/flume/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/usr/lib/jvm/java-8-openjdk-amd64/bin:/usr/share/scala/bin:/opt/hadoop/bin:/opt/anaconda3/bin:/opt/anaconda3/condabin:/home/jeff/.local/bin:/home/jeff/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/spark/bin:/opt/spark/sbin:/usr/lib/jvm/java-8-openjdk-amd64/bin

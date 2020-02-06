@@ -11,66 +11,67 @@ LF=~/hadoop_ecosystem_install.log
 sudo echo
 
 echo ... Installing Java ...
-01-Java/installJava.sh 2&> $LF 
+echo "... Installing Java ..." 2&> $LF
+01-Java/installJava.sh 2&>> $LF 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$JAVA_HOME/bin:$PATH
 echo
-sleep 5
 
 echo ... Installing Python ...
+echo "... Installing Python ..." 2&> $LF
 02-Python/InstallPy.sh 2&>> $LF
 export PYTHON_HOME=/opt/Python-3.6.9
 export PATH=$PATH:/opt/Python-3.6.9/bin
 echo
-sleep 5
 
 echo ... Installing Scala ...
+echo "... Installing Scala ..." 2&> $LF
 03-Scala/install_scala.sh 2&>> $LF
 export SCALA_HOME=/usr/share/scala/bin
 export PATH=$SCALA_HOME/bin:$PATH
 echo
-sleep 5
 
 echo ... Installing Sbt ...
+echo "... Installing Sbt ..." 2&> $LF
 04-Sbt/install_sbt.sh 2&>> $LF
 echo
-sleep 5
 
 echo ... Installing OpenSSH ...
+echo "... Installing OpenSSH ..." 2&> $LF
 05-OpenSSH/openssh.sh 2&>> $LF
 echo
-sleep 5
 
 echo ... Installing Github ...
+echo "... Installing Github ..." 2&> $LF
 06-GitHub/git_install.sh 2&>> $LF
 echo
-sleep 5
 
 echo ... Installing Hadoop ...
+echo "... Installing Hadoop ..." 2&> $LF
 08-Hadoop/hadoop_install.sh 2&>> $LF
 export HADOOP_HOME=/opt/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 echo
-sleep 5
 
 echo ... Installing Kafka ...
+echo "... Installing Kafka ..." 2&> $LF
 09-Kafka/installKafka.sh 2&>> $LF
 export KAFKA_HOME=/opt/kafka
 cd /opt
 sudo chown hadoop * -R
 cd ~
 echo
-sleep 5
 
 echo ... Installing Airflow ...
+echo "... Installing Airflow ..." 2&> $LF
 10-Airflow/install_airflow.sh
 export AIRFLOW_HOME=/home/`whoami`/airflow
 export PATH=/home/$USER_ID/.local/bin:$PATH
 echo
-sleep 5
 
 echo ... Installing Spark ...
+echo "... Installing Spark ..." 2&> $LF
 11-Spark/InstallSpark.sh
 echo
 

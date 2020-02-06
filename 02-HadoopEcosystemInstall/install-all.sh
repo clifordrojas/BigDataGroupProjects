@@ -71,7 +71,7 @@ export PATH=/home/$USER_ID/.local/bin:$PATH
 echo
 
 echo ... Installing Spark ...
-echo "... Installing Spark ..." 
+echo "... Installing Spark ..." 2&>> $LF
 11-Spark/InstallSpark.sh 2&>> $LF
 echo
 

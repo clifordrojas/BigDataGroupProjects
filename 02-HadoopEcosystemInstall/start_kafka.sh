@@ -18,7 +18,7 @@ sleep 1
 
 kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties.1
 sleep 1
-kafka-server-start.sh daemon $KAFKA_HOME/config/server.properties.2
+kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties.2
 sleep 1
 
 # create a sample topic

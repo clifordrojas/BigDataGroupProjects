@@ -21,8 +21,7 @@ export PATH=$SCALA_HOME/bin:$PATH
 echo
 
 echo ... Installing Sbt ...
-echo NOT IMPLEMENTED YET
-04-Sbt/install_sbt.sh
+04-Sbt/install_sbt.sh 2&>> $LF
 echo
 
 echo ... Installing OpenSSH ...
@@ -50,7 +49,8 @@ echo
 
 echo ... Installing Airflow ...
 10-Airflow/install_airflow.sh
-export AIRFLOW_HOME=/home/hadoop/airflow
+export AIRFLOW_HOME=/home/`whoami`/airflow
+export PATH=/home/`whoami`/.local/bin:PATH
 echo
 
 echo ... Installing Spark ...
@@ -80,7 +80,7 @@ export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
 export KAFKA_HOME=/opt/kafka
 export SCALA_HOME=/usr/share/scala/bin
 
-export PATH=$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
+export PATH=/home/`whoami`/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 " > ~/.bash_profile
 
 echo All Done !!!

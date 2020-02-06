@@ -12,7 +12,7 @@ Until the end
 echo
 echo Start producer and create an example topic with messages about melting ice
 echo
-kafka-console-producer.sh --topic example --broker-list localhost:19091 localhost:19092
+kafka-console-producer.sh --topic example --broker-list localhost:19091 localhost:19092 < msg.txt
 
 echo
 echo Start consumer and read in the SUPER EXCITING messages

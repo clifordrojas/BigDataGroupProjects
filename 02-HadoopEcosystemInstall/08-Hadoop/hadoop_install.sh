@@ -24,7 +24,7 @@ sudo chmod 755 hadoop-2.8.5
 sudo ln -s hadoop-2.8.5 hadoop 
 
 cd /opt 
-sudo chown hadoop hadoop-2.8.5 -R 
+sudo chown `whoami` hadoop-2.8.5 -R 
 sudo chmod 776 /opt/hadoop-2.8.5 -R 
 
 # configure the hadoop enviornment

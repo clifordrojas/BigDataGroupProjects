@@ -1,6 +1,8 @@
 #!/bin/bash
 # get user name for filling paths later
 USER_ID=`whoami`
+CWD=`pwd`
+
 if [ -z "$USER_ID" ]
 then
     USER_ID='hadoop'
@@ -59,20 +61,20 @@ echo "... Installing Kafka ..." 2&>> $LF
 09-Kafka/installKafka.sh 2&>> $LF
 export KAFKA_HOME=/opt/kafka
 cd /opt
-sudo chown hadoop * -R
+sudo chown ${USER_ID} * -R
 cd ~
 echo
 
 echo ... Installing Airflow ...
 echo "... Installing Airflow ..." 2&>> $LF
 10-Airflow/install_airflow.sh 2&>> $LF
-export AIRFLOW_HOME=/home/$USER_ID/airflow
+${CWD}/export AIRFLOW_HOME=/home/$USER_ID/airflow
 export PATH=/home/$USER_ID/.local/bin:$PATH
 echo
 
 echo ... Installing Spark ...
 echo "... Installing Spark ..." 2&>> $LF
-11-Spark/InstallSpark.sh 2&>> $LF
+${CWD}/11-Spark/InstallSpark.sh 2&>> $LF
 echo
 
 export SPARK_HOME=/opt/spark
@@ -100,6 +102,10 @@ export SCALA_HOME=/usr/share/scala/bin
 
 export PATH=/home/$USER_ID/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin:\$PATH
 " > ~/.bash_profile
+
+export "
+source ~/.bash_profile
+" >> ~/.bashrc
 
 echo All Done !!!
 echo

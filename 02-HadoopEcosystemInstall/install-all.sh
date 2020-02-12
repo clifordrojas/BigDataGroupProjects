@@ -88,14 +88,14 @@ export JAVA_HOME=$JAVA_HOME
 export SPARK_HOME=/opt/spark
 
 export HADOOP_HOME=/opt/hadoop
-export PATH=\$HADOOP_HOME/bin:\$HADOOP_HOME/sbin:\$PATH
 export HADOOP_CONF_DIR=\$HADOOP_HOME/etc/hadoop
 export HADOOP_INSTALL=\$HADOOP_HOME
 export HADOOP_MAPRED_HOME=\$HADOOP_HOME
 export HADOOP_COMMON_HOME=\$HADOOP_HOME
 export HADOOP_HDFS_HOME=\$HADOOP_HOME
-export HADOOP_YARN_HOME=\$HADOOP_HOME
 export HADOOP_OPTS="-Djava.library.path=\$HADOOP_HOME/ect/conf"
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/nativE
+export YARN_HOME=\$HADOOP_HOME
 
 export KAFKA_HOME=/opt/kafka
 export SCALA_HOME=/usr/share/scala/bin

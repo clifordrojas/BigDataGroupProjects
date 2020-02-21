@@ -62,13 +62,13 @@ echo "... Installing Kafka ..." 2&>> $LF
 export KAFKA_HOME=/opt/kafka
 cd /opt
 sudo chown ${USER_ID} * -R
-cd ~
+cd $CWD
 echo
 
 echo ... Installing Airflow ...
 echo "... Installing Airflow ..." 2&>> $LF
 10-Airflow/install_airflow.sh 2&>> $LF
-${CWD}/export AIRFLOW_HOME=/home/$USER_ID/airflow
+export AIRFLOW_HOME=/home/$USER_ID/airflow
 export PATH=/home/$USER_ID/.local/bin:$PATH
 echo
 
@@ -103,9 +103,9 @@ export SCALA_HOME=/usr/share/scala/bin
 export PATH=/home/$USER_ID/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME/bin:$PYTHON_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin:\$PATH
 " > ~/.bash_profile
 
-export "
+echo "
 source ~/.bash_profile
-" >> ~/.bashrc
+" >> ~.bashrc
 
 echo All Done !!!
 echo

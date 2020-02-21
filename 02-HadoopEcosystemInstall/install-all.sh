@@ -105,7 +105,7 @@ export PATH=/home/$USER_ID/.local/bin:$SCALA_HOME/bin:$KAFKA_HOME/bin:$JAVA_HOME
 
 echo "
 source ~/.bash_profile
-" >> ~.bashrc
+" >> ~/.bashrc
 
 echo All Done !!!
 echo

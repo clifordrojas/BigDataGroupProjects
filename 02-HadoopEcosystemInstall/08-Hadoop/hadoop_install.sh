@@ -7,7 +7,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 # update the hadoop user environment
 cd /home/hadoop
 
-# change owner
+# change perms
 cd /
 sudo chmod 755 /opt
 cd /opt
@@ -114,6 +114,8 @@ sudo mkdir -p /dfs/name/current
 
 sudo echo "Y
 " > ReplyYes.txt
+
+sudo chmod 776 /opt/hadoop-2.8.5 -R 
 
 hdfs namenode -format < ReplyYes.txt 
 sudo rm ReplyYes.txt

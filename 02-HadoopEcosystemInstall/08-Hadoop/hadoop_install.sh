@@ -5,7 +5,7 @@ export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
 # update the hadoop user environment
-cd /home/hadoop
+cd ~
 
 # change perms
 cd /
@@ -103,21 +103,21 @@ echo "<property>
 " >> hdfs-site.xml
 
 sudo mkdir /opt/hadoop/hdfs 
-sudo chown hadoop /opt/hadoop/hdfs 
-sudo chgrp hadoop /opt/hadoop/hdfs 
+sudo chown `whoami` /opt/hadoop/hdfs 
+sudo chgrp `whoami` /opt/hadoop/hdfs 
 
 sudo mkdir /opt/hadoop/namenode 
-sudo chown hadoop /opt/hadoop/namenode 
-sudo chgrp hadoop /opt/hadoop/namenode 
+sudo chown `whoami` /opt/hadoop/namenode 
+sudo chgrp `whoami` /opt/hadoop/namenode 
 
 sudo mkdir -p /dfs/name/current 
-
-sudo echo "Y
-" > ReplyYes.txt
 
 cd /opt
 sudo chmod 776 hadoop-2.8.5 -R 
 sudo chown `whoami` hadoop-2.8.5 -R 
 
+
+sudo echo "Y
+" > ReplyYes.txt
 hdfs namenode -format < ReplyYes.txt 
 sudo rm ReplyYes.txt

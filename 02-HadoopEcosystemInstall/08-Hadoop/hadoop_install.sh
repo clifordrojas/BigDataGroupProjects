@@ -115,7 +115,9 @@ sudo mkdir -p /dfs/name/current
 sudo echo "Y
 " > ReplyYes.txt
 
-sudo chmod 776 /opt/hadoop-2.8.5 -R 
+cd /opt
+sudo chmod 776 hadoop-2.8.5 -R 
+sudo chown `whoami` hadoop-2.8.5 -R 
 
 hdfs namenode -format < ReplyYes.txt 
 sudo rm ReplyYes.txt

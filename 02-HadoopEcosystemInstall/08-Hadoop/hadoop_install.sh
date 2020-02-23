@@ -116,8 +116,8 @@ cd /opt
 sudo chmod 776 hadoop-2.8.5 -R 
 sudo chown `whoami` hadoop-2.8.5 -R 
 
-
-sudo echo "Y
+cd ~
+echo "Y
 " > ReplyYes.txt
 hdfs namenode -format < ReplyYes.txt 
-sudo rm ReplyYes.txt
+rm ReplyYes.txt
